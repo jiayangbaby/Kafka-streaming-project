@@ -13,7 +13,7 @@ print("Starting producer...", file=sys.stderr)
 API_KEY = os.getenv("API_KEY")
 #API Error handling
 if not API_KEY:
-    print("❌ API_KEY is missing!", file=sys.stderr)
+    print("API_KEY is missing", file=sys.stderr)
     exit(1)
 
 # 5 targeted ETF APIs
@@ -44,7 +44,7 @@ while True:
             # Data validation
             current_price = data.get('c')
             if not current_price or current_price == 0:
-                print(f"⚠️ No valid price for {symbol} (value: {current_price}) — skipping...", file=sys.stderr)
+                print(f" No valid price for {symbol} (value: {current_price}) — skipping...", file=sys.stderr)
                 continue
 
             payload = {
